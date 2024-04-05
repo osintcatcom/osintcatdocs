@@ -1,0 +1,51 @@
+Documentation for the OSINT Cat API
+
+Introduction:
+The Data Breach Search API provides a powerful interface for searching through various data breaches to find if certain details (email, username, password, IP address) have been compromised. It aggregates data from multiple sources, offering a comprehensive search capability. This document outlines how to interact with the API, including authentication, request formats, endpoints, and examples.
+
+Authentication:
+To use the API, you need a valid API key, which must be included in the request cookies as API-Key. Unauthorized requests will be denied.
+
+Endpoints and Usage:
+The API exposes several endpoints for searching different types of data:
+
+Mainecoon Search:
+
+Email Search - /api/mainecoonemailsearch
+Username Search - /api/mainecoonusersearch
+Password Search - /api/mainecoonpasswordsearch
+IP Address Search - /api/mainecoonipsearch
+
+Persian Search:
+
+Username Search - /api/persianusersearch
+Email Search - /api/persianemailsearch
+Password Search - /api/persianpasswordsearch
+IP Address Search - /api/persianipsearch
+
+Ragdoll Search:
+
+Username Search - /api/ragdollusernamesearch
+Email Search - /api/ragdollemailsearch
+
+Burmese Search:
+
+Username Search - /api/burmeseusernamesearch
+Email Search - /api/burmeseemailsearch
+IP Address Search - /api/burmeseipsearch
+Password Search - /api/burmesepasswordsearch
+Hash Lookup - /api/hashsearch
+
+Each search endpoint accepts POST requests with JSON body containing the search parameter (email, username, password, ip, or hash).
+
+Blacklist:
+The API maintains a blacklist. Blacklisted queries will be denied.
+
+Response Format:
+Responses from the API are in JSON format. A successful search will return the relevant data from the breach databases. In case of an error (e.g., invalid API key, blacklisted query, or failed search), the response will include an error message and a status code indicating the nature of the issue.
+
+Security and Privacy:
+Ensure your API key is kept secure and not exposed publicly. Avoid sending sensitive personal information unnecessarily. The API is protected by CORS policy and requires proper authentication for access.
+
+Support:
+For issues, questions, or API key requests, please contact the API support team at ceo@osintcat.com or via the discord server (discord.gg/osintcat).
